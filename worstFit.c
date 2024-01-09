@@ -59,7 +59,7 @@ void mWorstFit(int blocks[], int nb, int processes[], int np)
 	    }
 	    if(idx!=-1){
 	    	alloc[i]=idx;
-	    	occ[i]=1;
+	    	occ[idx]=1;
 	    	blocks[idx]-=processes[i];
 		}
 	}
