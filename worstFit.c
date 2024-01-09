@@ -15,7 +15,7 @@ void worstFit(int blocks[], int nb, int processes[], int np)
 	        if (!occ[j] && blocks[j] >= processes[i]){
 	                // allocate block j to p[i] process
 	                if(idx==-1) idx=j;
-	                else if(blocks[j]>=blocks[idx]) idx=j;
+	                else if(blocks[j]>blocks[idx]) idx=j;
 	        }
 	    }
 	    if(idx!=-1){
@@ -54,7 +54,7 @@ void mWorstFit(int blocks[], int nb, int processes[], int np)
 	        if (blocks[j] >= processes[i]){
 	                // allocate block j to p[i] process
 	                if(idx==-1) idx=j;
-	                else if(blocks[j]>=blocks[idx]) idx=j;
+	                else if(blocks[j]>blocks[idx]) idx=j;
 	        }
 	    }
 	    if(idx!=-1){
@@ -121,16 +121,16 @@ Output 2:
 Enter size of nb and np:
 5 4
 Enter each block size:
-100 50 30 120 35
+5 4 3 6 7
 Enter each process size:
-40 10 30 60
+1 3 5 3
 Enter choice:
-23
+2
 
 Process No.     Process Size    Block no.
-1                40             4
-2                10             1
-3                30             1
-4                60             4
-Internal and external fragmentations are 80 and         35
+1                1              5
+2                3              4
+3                5              5
+4                3              1
+Internal and external fragmentations are 6 and 7
 */
